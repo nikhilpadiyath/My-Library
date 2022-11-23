@@ -29,28 +29,31 @@ function displayBookOnPage(){
         }
     })
 }
-const addBookBtn= document.querySelector(".addbookbtn");
-addBookBtn.addEventListener("click",displayForm);
-function displayForm(){
-    document.getElementById("add-book-form").style.display="";
-}
-const submitbtn= document.querySelector("#submit");
-submitbtn.addEventListener("click", intakeData);
-function intakeData(){
-    let title= document.getElementById("title").value;
-    let author= document.getElementById("author").value;
-    let pages= document.getElementById("pages").value;
-    let read= document.getElementById("read").value;
 
-    if((title == "") || (author =="") || (pages =="") ||(read == "")){
-        return;
+addEventListener('DOMContentLoaded', (event) => {
+    const addBookBtn = document.querySelector(".addbookbtn");
+    addBookBtn.addEventListener("click", displayForm);
+    function displayForm() {
+        document.getElementById("add-book-form").style.display = "";
     }
-    addBookToLib(title,author,pages,read);
-    document.getElementById("add-book").reset();
-}
+    const submitbtn = document.querySelector("#submit");
+    submitbtn.addEventListener("click", intakeData);
+    function intakeData() {
+        let title = document.getElementById("Title").value;
+        let author = document.getElementById("Author").value;
+        let pages = document.getElementById("Pages").value;
+        let read = document.getElementById("Read").value;
 
-const cleardata = document.querySelector("#reset");
-cleardata.addEventListener("click",clearForm);
-function clearForm(){
-    document.getElementById("add-book").reset();
-}
+        if ((title == "") || (author == "") || (pages == "") || (read == "")) {
+            return;
+        }
+        addBookToLib(title, author, pages, read);
+        document.getElementById("add-book").reset();
+    }
+
+    const cleardata = document.querySelector("#reset");
+    cleardata.addEventListener("click", clearForm);
+    function clearForm() {
+        document.getElementById("add-book").reset();
+    }
+});
