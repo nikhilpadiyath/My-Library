@@ -29,39 +29,7 @@ function displayBookOnPage(){
             card.appendChild(para);
         }
     })
-}
-<<<<<<< HEAD
-const addBookBtn= document.querySelector(".addbookbtn");
-addBookBtn.addEventListener("click",displayForm);
-function displayForm(){
-    document.getElementById("add-book-form").style.display="";
-}
-const submitbtn= document.querySelector("#submit");
-submitbtn.addEventListener("click", intakeData);
-function intakeData(){
-    debugger;
-    let Title= document.getElementById("Title").value;
-    let Author= document.getElementById("Author").value;
-    let Pages= document.getElementById("Pages").value;
-    let Read= document.getElementById("Read").value;
-
-    if((Title == "") || (Author =="") || (Pages =="") ||(Read == "")){
-        return;
     }
-    addBookToLib(Title,Author,Pages,Read);
-    document.getElementById("add-book").reset();
-}
-
-const cleardata = document.querySelector("#reset");
-cleardata.addEventListener("click",clearForm);
-function clearForm(){
-    document.getElementById("add-book").reset();
-}
-}
-);
-=======
-
-addEventListener('DOMContentLoaded', (event) => {
     const addBookBtn = document.querySelector(".addbookbtn");
     addBookBtn.addEventListener("click", displayForm);
     function displayForm() {
@@ -70,15 +38,15 @@ addEventListener('DOMContentLoaded', (event) => {
     const submitbtn = document.querySelector("#submit");
     submitbtn.addEventListener("click", intakeData);
     function intakeData() {
-        let title = document.getElementById("Title").value;
-        let author = document.getElementById("Author").value;
-        let pages = document.getElementById("Pages").value;
-        let read = document.getElementById("Read").value;
+        let Title = document.getElementById("Title").value;
+        let Author = document.getElementById("Author").value;
+        let Pages = document.getElementById("Pages").value;
+        let Read = document.getElementById("Read").value;
 
-        if ((title == "") || (author == "") || (pages == "") || (read == "")) {
+        if ((Title == "") || (Author == "") || (Pages == "") || (Read == "")) {
             return;
         }
-        addBookToLib(title, author, pages, read);
+        addBookToLib(Title, Author, Pages, Read);
         document.getElementById("add-book").reset();
     }
 
@@ -87,5 +55,4 @@ addEventListener('DOMContentLoaded', (event) => {
     function clearForm() {
         document.getElementById("add-book").reset();
     }
-});
->>>>>>> 031eecb6cd1c46d700a7b43399bcf8cd39d6bf48
+})
