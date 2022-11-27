@@ -1,12 +1,13 @@
 let myLibrary=[];
-function Book(title,author,pages,read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+function Book(Title,Author,Pages,Read){
+    this.Title = Title;
+    this.Author = Author;
+    this.Pages = Pages;
+    this.Read = Read;
 }
-function addBookToLib(title,author,pages,read){
-    let book = new Book(title,author,pages,read);
+addEventListener('DOMContentLoaded',(event) => {
+function addBookToLib(Title,Author,Pages,Read){
+    let book = new Book(Title,Author,Pages,Read);
     myLibrary.push(book);
     displayBookOnPage();
 }
@@ -37,15 +38,16 @@ function displayForm(){
 const submitbtn= document.querySelector("#submit");
 submitbtn.addEventListener("click", intakeData);
 function intakeData(){
-    let title= document.getElementById("title").value;
-    let author= document.getElementById("author").value;
-    let pages= document.getElementById("pages").value;
-    let read= document.getElementById("read").value;
+    debugger;
+    let Title= document.getElementById("Title").value;
+    let Author= document.getElementById("Author").value;
+    let Pages= document.getElementById("Pages").value;
+    let Read= document.getElementById("Read").value;
 
-    if((title == "") || (author =="") || (pages =="") ||(read == "")){
+    if((Title == "") || (Author =="") || (Pages =="") ||(Read == "")){
         return;
     }
-    addBookToLib(title,author,pages,read);
+    addBookToLib(Title,Author,Pages,Read);
     document.getElementById("add-book").reset();
 }
 
@@ -54,3 +56,5 @@ cleardata.addEventListener("click",clearForm);
 function clearForm(){
     document.getElementById("add-book").reset();
 }
+}
+);
