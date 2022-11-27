@@ -30,6 +30,7 @@ function displayBookOnPage(){
         }
     })
 }
+<<<<<<< HEAD
 const addBookBtn= document.querySelector(".addbookbtn");
 addBookBtn.addEventListener("click",displayForm);
 function displayForm(){
@@ -58,3 +59,33 @@ function clearForm(){
 }
 }
 );
+=======
+
+addEventListener('DOMContentLoaded', (event) => {
+    const addBookBtn = document.querySelector(".addbookbtn");
+    addBookBtn.addEventListener("click", displayForm);
+    function displayForm() {
+        document.getElementById("add-book-form").style.display = "";
+    }
+    const submitbtn = document.querySelector("#submit");
+    submitbtn.addEventListener("click", intakeData);
+    function intakeData() {
+        let title = document.getElementById("Title").value;
+        let author = document.getElementById("Author").value;
+        let pages = document.getElementById("Pages").value;
+        let read = document.getElementById("Read").value;
+
+        if ((title == "") || (author == "") || (pages == "") || (read == "")) {
+            return;
+        }
+        addBookToLib(title, author, pages, read);
+        document.getElementById("add-book").reset();
+    }
+
+    const cleardata = document.querySelector("#reset");
+    cleardata.addEventListener("click", clearForm);
+    function clearForm() {
+        document.getElementById("add-book").reset();
+    }
+});
+>>>>>>> 031eecb6cd1c46d700a7b43399bcf8cd39d6bf48
