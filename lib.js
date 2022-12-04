@@ -10,6 +10,7 @@ function addBookToLib(Title,Author,Pages,Read){
     let book = new Book(Title,Author,Pages,Read);
     myLibrary.push(book);
     displayBookOnPage();
+    readStatus();
 }
 function displayBookOnPage(){
     const books= document.querySelector(".books");
@@ -44,7 +45,11 @@ function displayBookOnPage(){
         let Read = document.getElementById("Read").value;
 
         if ((Title == "") || (Author == "") || (Pages == "") || (Read == "")) {
+            error.innerHTML="*Please fill all the blanks";
             return;
+        }
+        else{
+            error.innerHTML="";
         }
         addBookToLib(Title, Author, Pages, Read);
         document.getElementById("add-book").reset();
@@ -56,3 +61,9 @@ function displayBookOnPage(){
         document.getElementById("add-book").reset();
     }
 })
+    function readStatus() {
+        if(Read == "No" || Read == "no")
+        {
+            document.getElementsByClassName("card").style.borderLeft = "thick solid #0000FF";
+        }
+    }
