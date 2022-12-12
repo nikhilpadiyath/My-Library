@@ -10,7 +10,7 @@ function addBookToLib(Title,Author,Pages,Read){
     let book = new Book(Title,Author,Pages,Read);
     myLibrary.push(book);
     displayBookOnPage();
-    readStatus();
+    readStatus(Read);
 }
 function displayBookOnPage(){
     const books= document.querySelector(".books");
@@ -61,9 +61,10 @@ function displayBookOnPage(){
         document.getElementById("add-book").reset();
     }
 })
-    function readStatus() {
+    function readStatus(Read) {
         if(Read == "No" || Read == "no")
         {
-            document.getElementsByClassName("card").style.borderLeft = "thick solid #0000FF";
+         card.style.borderLeft = "thick solid #0000FF";
+    
         }
     }

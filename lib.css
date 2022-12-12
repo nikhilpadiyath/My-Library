@@ -9,12 +9,12 @@ body{
 .book-form{
     border: groove;
     background-color: #bef264 ;
-    height: 100vh;
+    height: auto;
 }
 .right{
     border: groove;
     background-color: #bfdbfe ;
-    height: 100vh;
+    height: auto;
 }
 .books{
     display: grid;
