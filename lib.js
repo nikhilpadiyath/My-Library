@@ -10,7 +10,6 @@ function addBookToLib(Title,Author,Pages,Read){
     let book = new Book(Title,Author,Pages,Read);
     myLibrary.push(book);
     displayBookOnPage();
-    readStatus(Read);
 }
 function displayBookOnPage(){
     const books= document.querySelector(".books");
@@ -18,17 +17,32 @@ function displayBookOnPage(){
     for ( let i=0; i<removeDivs.length; i++){
         removeDivs[i].remove();
     }
-
-    myLibrary.forEach(myLibrary => {
+    let index=0;
+    myLibrary.forEach(myLibrarys => {
         const card = document.createElement("div");
         card.classList.add("card");
         books.appendChild(card);
-        for( let key in myLibrary){
-            console.log(`${key}: ${myLibrary[key]}`);
+        const removeBook= document.createElement("button");
+        removeBook.classList.add("remove-Book");
+        removeBook.textContent="Remove from Library";
+        removeBook.dataset.linkedArray= index;
+        card.appendChild(removeBook);
+        removeBook.addEventListener("click",removeFromLibrary);
+
+        function removeFromLibrary(){
+            let bookToRemove= removeBook.dataset.linkedArray;
+            console.log("The array index of book to be removed is",bookToRemove);
+            myLibrary.splice(parseInt(bookToRemove),1);
+            card.remove();
+            displayBookOnPage();
+        }
+        for( let key in myLibrarys){
+            console.log(`${key}: ${myLibrarys[key]}`);
             const para = document.createElement("p");
-            para.textContent = (`${key}: ${myLibrary[key]}`);
+            para.textContent = (`${key}: ${myLibrarys[key]}`);
             card.appendChild(para);
         }
+        index++;
     })
     }
     const addBookBtn = document.querySelector(".addbookbtn");
@@ -61,10 +75,3 @@ function displayBookOnPage(){
         document.getElementById("add-book").reset();
     }
 })
-    function readStatus(Read) {
-        if(Read == "No" || Read == "no")
-        {
-         card.style.borderLeft = "thick solid #0000FF";
-    
-        }
-    }
