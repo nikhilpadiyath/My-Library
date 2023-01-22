@@ -13,10 +13,10 @@ body{
 }
 .right{
     display: grid;
-    width: 100vw;
     border: groove;
     background-color: #bfdbfe ;
     height: auto;
+    overflow: auto;
 }
 #Read{
 margin-top: 10px;
@@ -69,16 +69,19 @@ label{
     margin-bottom: 10px;
     margin-left: 20px;
 }
+
 p{
     margin-left: 10px;
     font-style:italic;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
-.remove-Book{
-  background-color: pink;
+.remove-Book,.read-status-btn{
+  background-color: blue;
+  color: white;
   border-radius: 10px;
-  border-color: pink;
+  border-color: blue;
   width: 200px;
   margin-left: 30px;
+  margin-top: 5px;
 }
